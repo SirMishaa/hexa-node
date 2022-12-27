@@ -16,7 +16,7 @@ const routes: RouteOptions[] = [
 
 try {
 	await bootServer({
-		port: 80,
+		port: 3000,
 		httpServerConfiguration: {
 			logger: true,
 		},

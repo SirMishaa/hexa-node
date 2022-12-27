@@ -1,0 +1,7 @@
+### Basic request
+GET {{host}}/
+Accept: application/json
+
+### Basic request
+GET {{host}}/?name=John
+Accept: application/json
