@@ -1,9 +1,13 @@
 {
-	"name": "ts-lib-starter",
+	"name": "hexa-node",
 	"version": "0.0.0",
 	"type": "module",
-	"description": "boilerplate for your next TypeScript library",
+	"description": "learning hexagonal architecture with a basic e-commerce clone",
 	"main": "dist/index.cjs",
+	"engines": {
+		"node": ">=19.0.0"
+	},
+	"engineStrict": true,
 	"exports": {
 		"./package.json": "./package.json",
 		".": {
@@ -16,7 +20,9 @@
 		"dist"
 	],
 	"scripts": {
-		"build": "tsup",
+		"run:watch": "node --watch dist/index.cjs",
+		"build": "tsup --metafile --dts",
+		"build:watch": "tsup --watch --onSuccess 'node dist/index.js'",
 		"format": "dprint fmt",
 		"lint": "run-p lint:*",
 		"lint:format": "dprint check",
@@ -37,19 +43,5 @@
 		"vitest": "0.25.1"
 	},
 	"sideEffects": false,
-	"tsup": {
-		"entry": [
-			"src/index.ts"
-		],
-		"format": [
-			"esm",
-			"cjs"
-		],
-		"dts": {
-			"resolve": true
-		},
-		"splitting": true,
-		"clean": true
-	},
 	"packageManager": "pnpm@7.20.0"
 }
