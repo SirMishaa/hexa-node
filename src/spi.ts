@@ -4,7 +4,6 @@ export interface BaseEntity {
 	id: Uuid
 	createdAt: Date
 	updatedAt: Date
-	removedAt: Date | null
 }
 
 export interface Item extends BaseEntity {
@@ -13,6 +12,7 @@ export interface Item extends BaseEntity {
 	price: number
 	availableQuantity: number
 	seller: Seller
+	removedAt: Date | null
 }
 
 export interface Seller {

@@ -1,0 +1,40 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider        = "prisma-client-js"
+  previewFeatures = ["postgresqlExtensions"]
+}
+
+datasource db {
+  provider   = "postgresql"
+  url        = env("DATABASE_URL")
+  extensions = [pgcrypto]
+}
+
+model Seller {
+  id        String   @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  createdAt DateTime @default(now()) @db.Timestamptz(0)
+  updatedAt DateTime @updatedAt @db.Timestamptz(0)
+
+  name           String  @unique
+  description    String?
+  logoPictureUrl String?
+  contactEmail   String?
+  items          Item[]
+}
+
+model Item {
+  id        String    @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  createdAt DateTime  @default(now()) @db.Timestamptz(0)
+  updatedAt DateTime  @updatedAt @db.Timestamptz(0)
+  removedAt DateTime? @db.Timestamptz(0)
+
+  name              String
+  description       String?
+  priceInCents      BigInt
+  availableQuantity Int     @db.Integer
+
+  seller   Seller @relation(fields: [sellerId], references: [id], onDelete: Restrict, onUpdate: Restrict)
+  sellerId String @db.Uuid
+}
