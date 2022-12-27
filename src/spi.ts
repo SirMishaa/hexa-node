@@ -1,4 +1,4 @@
-type Uuid = string
+export type Uuid = string
 
 export interface BaseEntity {
 	id: Uuid
