@@ -9,7 +9,10 @@
 		"allowSyntheticDefaultImports": true,
 		"forceConsistentCasingInFileNames": true,
 		"noEmit": true,
-		"isolatedModules": true
+		"isolatedModules": true,
+		"paths": {
+			"@/*": ["./src/*"]
+		}
 	},
 	"include": ["src", "test"],
 	"exclude": ["node_modules", "dist"]
