@@ -22,7 +22,7 @@
 	"scripts": {
 		"run:watch": "node --watch dist/index.cjs",
 		"build": "tsup --metafile --dts",
-		"build:watch": "tsup --watch --onSuccess 'node dist/index.js'",
+		"build:watch": "tsup --watch --onSuccess 'node dist/index.js | pino-pretty -c -t'",
 		"format": "dprint fmt",
 		"lint": "run-p lint:*",
 		"lint:format": "dprint fmt",
@@ -39,11 +39,17 @@
 		"dprint": "0.32.2",
 		"eslint": "8.27.0",
 		"npm-run-all": "4.1.5",
+		"pino-pretty": "^9.1.1",
 		"tsup": "6.4.0",
 		"typescript": "4.9.4",
 		"vite": "3.2.5",
 		"vitest": "0.26.2"
 	},
 	"sideEffects": false,
-	"packageManager": "pnpm@7.20.0"
+	"packageManager": "pnpm@7.20.0",
+	"dependencies": {
+		"fastify": "^4.10.2",
+		"pino": "^8.8.0",
+		"zod": "^3.20.2"
+	}
 }
