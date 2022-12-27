@@ -1,6 +1,14 @@
 {
-  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": [
-    "config:base"
-  ]
+	"$schema": "https://docs.renovatebot.com/renovate-schema.json",
+	"extends": [
+		"config:base"
+	],
+	"allowScripts": true,
+	"postUpgradeTasks": {
+		"commands": [
+			"pnpm run lint"
+		],
+		"fileFilters": ["pnpm-lock.yaml", "**/*.{ts,tsx,js,jsx,cjs,mjs,json,json5,md,yaml}"],
+		"executionMode": "update"
+	}
 }
