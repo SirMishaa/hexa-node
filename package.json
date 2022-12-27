@@ -47,6 +47,12 @@
 		"vite": "3.2.5",
 		"vitest": "0.26.2"
 	},
+	"husky": {
+		"hooks": {
+			"pre-commit": "pnpm run lint"
+		}
+	},
+
 	"sideEffects": false,
 	"packageManager": "pnpm@7.20.0",
 	"dependencies": {
