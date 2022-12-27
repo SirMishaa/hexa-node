@@ -1,3 +1,4 @@
+import { PrismaClient } from '@prisma/client'
 import { RouteOptions } from 'fastify'
 import Pino from 'pino'
 import { HomeController } from './infrastructure/controller/HomeController'
@@ -5,7 +6,7 @@ import { UnhandledInfrastructureError } from './infrastructure/exception/excepti
 import { bootServer } from './infrastructure/server'
 
 const logger = Pino({ level: 'debug' })
-
+const prismaInstance = new PrismaClient()
 const routes: RouteOptions[] = [
 	{
 		method: 'GET',
@@ -22,6 +23,7 @@ try {
 		},
 		routes: routes,
 		logger,
+		prismaInstance,
 	})
 } catch (error) {
 	if (error instanceof UnhandledInfrastructureError) {

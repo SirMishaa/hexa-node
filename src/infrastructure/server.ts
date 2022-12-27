@@ -1,3 +1,4 @@
+import { PrismaClient } from '@prisma/client'
 import fastify, { FastifyInstance, FastifyServerOptions, RouteOptions } from 'fastify'
 import Pino from 'pino'
 import { UnhandledInfrastructureError } from './exception/exception'
@@ -7,6 +8,7 @@ export type AppConfiguration = {
 	httpServerConfiguration: FastifyServerOptions
 	routes: Array<RouteOptions>
 	logger: Pino.Logger
+	prismaInstance: PrismaClient
 }
 
 /**
@@ -33,7 +35,10 @@ export async function bootServer(appConfiguration: AppConfiguration): Promise<Fa
  * @param {AppConfiguration} appConfiguration
  * @param {FastifyInstance} fastifyInstance
  */
-export function bindRoutes(appConfiguration: AppConfiguration, fastifyInstance: FastifyInstance) {
+export function bindRoutes(
+	appConfiguration: Omit<AppConfiguration, 'prismaInstance'>,
+	fastifyInstance: FastifyInstance,
+) {
 	const startTime = performance.now()
 	for (const routeOptions of appConfiguration.routes) {
 		appConfiguration.logger.debug(

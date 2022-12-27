@@ -15,7 +15,7 @@ describe('Server functions', () => {
 				},
 			},
 		]
-		const configuration: AppConfiguration = {
+		const configuration: Omit<AppConfiguration, 'prismaInstance'> = {
 			port: 3000,
 			httpServerConfiguration: {},
 			routes,
