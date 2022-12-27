@@ -52,7 +52,6 @@
 			"pre-commit": "pnpm run lint"
 		}
 	},
-
 	"sideEffects": false,
 	"packageManager": "pnpm@7.20.0",
 	"dependencies": {
