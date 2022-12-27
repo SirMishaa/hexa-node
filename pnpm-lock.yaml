@@ -7,7 +7,6 @@ specifiers:
   dprint: 0.32.2
   eslint: 8.27.0
   fastify: ^4.10.2
-  husky: ^8.0.2
   npm-run-all: 4.1.5
   pino: ^8.8.0
   pino-pretty: ^9.1.1
@@ -28,7 +27,6 @@ devDependencies:
   '@vitest/coverage-c8': 0.26.2
   dprint: 0.32.2
   eslint: 8.27.0
-  husky: 8.0.2
   npm-run-all: 4.1.5
   pino-pretty: 9.1.1
   tsup: 6.4.0_typescript@4.9.4
@@ -1599,12 +1597,6 @@ packages:
   /human-signals/2.1.0:
     resolution: {integrity: sha512-B4FFZ6q/T2jhhksgkbEW3HBvWIfDW85snkQgawt07S7J5QXTk6BkNV+0yAeZrM5QpMAdYlocGoljn0sJ/WQkFw==}
     engines: {node: '>=10.17.0'}
-    dev: true
-
-  /husky/8.0.2:
-    resolution: {integrity: sha512-Tkv80jtvbnkK3mYWxPZePGFpQ/tT3HNSs/sasF9P2YfkMezDl3ON37YN6jUUI4eTg5LcyVynlb6r4eyvOmspvg==}
-    engines: {node: '>=14'}
-    hasBin: true
     dev: true
 
   /ieee754/1.2.1:
