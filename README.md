@@ -1,5 +1,7 @@
 # Hexa Node
 
+![Continuous Integration Pipeline status](https://github.com/SirMishaa/hexa-node/actions/workflows/ci.yml/badge.svg)
+
 Learn hexagonal architecture with a basic e-commerce clone.
 This is more backend oriented, main focus is on the domain layer.
 
