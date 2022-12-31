@@ -1,6 +1,8 @@
+import { container } from '@/infrastructure/core/depedencyContainer'
 import { AppConfiguration, bindRoutes } from '@/infrastructure/server'
+import { BaseLoggerInterface } from '@/interface'
+import { TYPES } from '@/types'
 import fastify, { RouteOptions } from 'fastify'
-import Pino from 'pino'
 import { describe, expect, it } from 'vitest'
 
 describe('Server functions', () => {
@@ -19,7 +21,7 @@ describe('Server functions', () => {
 			port: 3000,
 			httpServerConfiguration: {},
 			routes,
-			logger: Pino(),
+			logger: container.get<BaseLoggerInterface>(TYPES.BaseLogger),
 		}
 		bindRoutes(configuration, fastifyInstance)
 

@@ -10,9 +10,12 @@
 		"forceConsistentCasingInFileNames": true,
 		"noEmit": true,
 		"isolatedModules": true,
+		"experimentalDecorators": true,
+		"emitDecoratorMetadata": true,
 		"paths": {
 			"@/*": ["./src/*"]
-		}
+		},
+		"types": ["reflect-metadata"]
 	},
 	"include": ["src", "test"],
 	"exclude": ["node_modules", "dist"]
