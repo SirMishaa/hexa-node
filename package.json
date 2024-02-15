@@ -47,7 +47,7 @@
 		"vitest": "0.26.2"
 	},
 	"sideEffects": false,
-	"packageManager": "pnpm@7.20.0",
+	"packageManager": "pnpm@7.33.7",
 	"prisma": {
 		"schema": "./src/infrastructure/prisma/schema.prisma"
 	},
