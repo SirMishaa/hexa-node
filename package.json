@@ -34,7 +34,7 @@
 	},
 	"devDependencies": {
 		"@sachinraja/eslint-config": "0.2.0",
-		"@types/node": "18.11.18",
+		"@types/node": "18.19.57",
 		"@vitest/coverage-c8": "^0.26.2",
 		"dprint": "0.32.2",
 		"eslint": "8.27.0",
